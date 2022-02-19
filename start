@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export current_dir=$(pwd)
+echo ":::: current_dir: $current_dir"
+docker-compose -p haproxy-whiteboard -f docker-compose.yml up -d --build
+

@@ -1,0 +1,12 @@
+version: '2'
+services:
+  haproxy-whiteboard:
+    image: haproxy-whiteboard
+    build: whiteboard/.
+    container_name: 'haproxy-whiteboard'
+    hostname: 'haproxy-whiteboard'
+    volumes:
+      - '${current_dir}/whiteboard:/py'
+    ports:
+      - '5000:5000'
+
