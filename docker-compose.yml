@@ -6,7 +6,7 @@ services:
     container_name: 'haproxy-whiteboard'
     hostname: 'haproxy-whiteboard'
     volumes:
-      - '${current_dir}/whiteboard:/py'
+      - '${current_dir}/whiteboard:/app'
     ports:
       - '5000:5000'
 
