@@ -3,8 +3,9 @@
 Adding a simple dashboard to HAProxt for IP whitelisting.
 
 # Quick start (development mode)
+NOTE: You need to have Docker and Docker Compose already installed and ready to use.
 ```
-git clone git@github.com:tohu-wabohu/haproxy-whiteboard.git
+git clone https://github.com/tohu-wabohu/haproxy-whiteboard.git
 cd haproxy-whiteboard
 ./start
 
