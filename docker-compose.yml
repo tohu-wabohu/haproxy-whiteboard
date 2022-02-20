@@ -15,5 +15,7 @@ services:
     build: haproxy/.
     container_name: 'haproxy-proxy'
     hostname: 'haproxy-proxy'
+    volumes:
+      - '${current_dir}/whiteboard/acls:/usr/local/etc/haproxy/acls'
     ports:
       - '80:80'
