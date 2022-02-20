@@ -32,7 +32,7 @@ def main():
             data[ip] = comment
             with open('ips.json', 'w') as json_file:
                 json.dump(data, json_file)
-            with open('ips.txt', 'w') as txt_file:
+            with open('haproxy/ips.txt', 'w') as txt_file:
                 for k in data:
                     txt_file.write(k + "/32\n")
                 
@@ -41,7 +41,7 @@ def main():
             del data[key]
             with open('ips.json', 'w') as json_file:
                 json.dump(data, json_file)
-            with open('ips.txt', 'w') as txt_file:
+            with open('haproxy/ips.txt', 'w') as txt_file:
                 for k in data:
                     txt_file.write(k + "/32\n")
 
@@ -49,7 +49,7 @@ def main():
         json_object = json.load(json_file)
         print(type(json_object))
         ips_json = json.dumps(json_object, indent=4)
-    with open('ips.txt') as txt_file:
+    with open('haproxy/ips.txt') as txt_file:
         ips_txt = txt_file.read()
 
     try:

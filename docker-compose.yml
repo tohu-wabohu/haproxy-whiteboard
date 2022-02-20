@@ -15,8 +15,5 @@ services:
     build: haproxy/.
     container_name: 'haproxy-proxy'
     hostname: 'haproxy-proxy'
-    #volumes:
-    #  - '${current_dir}/whiteboard:/app'
-    #ports:
-    #  - '5000:5000'
-    #command: haproxy -S 0.0.0.0:1234 -W -db -f /usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - '80:80'
