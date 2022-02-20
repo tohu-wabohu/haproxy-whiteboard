@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash
 import json
 import ipaddress
-import pprint
+import subprocess
 
 app = Flask(__name__)
 app.secret_key = b'vJ6mDThaTyanFHxiLKX7'    # This is not safe. Don't do like this on production
@@ -51,6 +51,13 @@ def main():
         ips_json = json.dumps(json_object, indent=4)
     with open('ips.txt') as txt_file:
         ips_txt = txt_file.read()
+
+    try:
+        rez = subprocess.run('echo "reload" | socat stdio tcp4-connect:haproxy-proxy:1234', stdout = subprocess.PIPE, shell=True, check=True)
+        print(rez)
+    except:
+        flash("Reloading haproxy failed", "reload_error")
+
     return render_template('index.html', items=data, ips_json=ips_json, ips_txt=ips_txt)
 
 

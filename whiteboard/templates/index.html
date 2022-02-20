@@ -23,6 +23,9 @@
 	    {% with messages = get_flashed_messages(category_filter=["bad_ip"]) %}
 	    {% if messages %}<p class="p-1 m-1 alert-danger">Error: Bad IP address {{ messages }} ...</p>{% endif %}
             {% endwith %}
+	    {% with messages = get_flashed_messages(category_filter=["reload_error"]) %}
+            {% if messages %}<p class="p-1 m-1 alert-danger">Error: {{ messages }} ...</p>{% endif %}
+            {% endwith %}
 
 	    <!-- SECOND ROW ---------------------------------------------------------------------------- -->
 	    <form action="/" method="post">
