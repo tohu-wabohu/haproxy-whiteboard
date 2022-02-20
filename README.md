@@ -12,4 +12,6 @@ cd haproxy-whiteboard
 ./exec_whiteboard
 python app.py
 ```
-App will be exposed through https://127.0.0.1:5000
+App will be exposed through http://127.0.0.1:5000
+
+HAProxy will start listening on http://127.0.0.1. You can test whitelisting feature using provided IP on this page.
